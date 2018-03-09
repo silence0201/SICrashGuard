@@ -13,6 +13,7 @@
 		E808AE192052B5F50040D14A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E808AE172052B5F50040D14A /* LaunchScreen.storyboard */; };
 		E808AE1C2052B5F50040D14A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E808AE1B2052B5F50040D14A /* main.m */; };
 		E808AE292052B96E0040D14A /* SISwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = E808AE282052B96E0040D14A /* SISwizzling.m */; };
+		E808AE2D2052C2020040D14A /* UIView+Guard.m in Sources */ = {isa = PBXBuildFile; fileRef = E808AE2C2052C2020040D14A /* UIView+Guard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		E808AE262052B9060040D14A /* SIMetamacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIMetamacros.h; sourceTree = "<group>"; };
 		E808AE272052B96E0040D14A /* SISwizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SISwizzling.h; sourceTree = "<group>"; };
 		E808AE282052B96E0040D14A /* SISwizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SISwizzling.m; sourceTree = "<group>"; };
+		E808AE2C2052C2020040D14A /* UIView+Guard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Guard.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		E808AE222052B63D0040D14A /* SICrashGuard */ = {
 			isa = PBXGroup;
 			children = (
+				E808AE2A2052C1D90040D14A /* UI */,
 				E808AE252052B8EF0040D14A /* Swizzle */,
 			);
 			path = SICrashGuard;
@@ -103,6 +106,14 @@
 				E808AE282052B96E0040D14A /* SISwizzling.m */,
 			);
 			path = Swizzle;
+			sourceTree = "<group>";
+		};
+		E808AE2A2052C1D90040D14A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E808AE2C2052C2020040D14A /* UIView+Guard.m */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E808AE2D2052C2020040D14A /* UIView+Guard.m in Sources */,
 				E808AE1C2052B5F50040D14A /* main.m in Sources */,
 				E808AE292052B96E0040D14A /* SISwizzling.m in Sources */,
 				E808AE0E2052B5F50040D14A /* AppDelegate.m in Sources */,

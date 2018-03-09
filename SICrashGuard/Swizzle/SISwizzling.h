@@ -44,7 +44,7 @@
 #define SIHookOrgin(...)                                                                                        \
             __si_hook_orgin_function                                                                            \
             ?__si_hook_orgin_function(self,__siHookSel,##__VA_ARGS__)                                           \
-            :((typeof(__si_hook_orgin_function))(class_getMethodImplementation(__siHookSuperClass,__xxHookSel)))(self,__siHookSel,##__VA_ARGS__)
+            :((typeof(__si_hook_orgin_function))(class_getMethodImplementation(__siHookSuperClass,__siHookSel)))(self,__siHookSel,##__VA_ARGS__)
 
 
 /// 生成真实调用函数,私有
@@ -59,7 +59,7 @@
                                                                                                                 \
     static char associatedKey;                                                                                  \
     __unused Class __siHookClass = guard_hook_getClassFromObject(theHookClass);                                 \
-    __unused Class __siHookSuperClass = class_getSuperclass(__xxHookClass);                                     \
+    __unused Class __siHookSuperClass = class_getSuperclass(__siHookClass);                                     \
     __unused SEL __siHookSel  = theSEL;                                                                         \
     if (nil == __siHookClass                                                                                    \
         || objc_getAssociatedObject(__siHookClass, &associatedKey))                                             \
