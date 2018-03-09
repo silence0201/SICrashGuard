@@ -12,6 +12,7 @@
 		E808AE162052B5F50040D14A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E808AE152052B5F50040D14A /* Assets.xcassets */; };
 		E808AE192052B5F50040D14A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E808AE172052B5F50040D14A /* LaunchScreen.storyboard */; };
 		E808AE1C2052B5F50040D14A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E808AE1B2052B5F50040D14A /* main.m */; };
+		E808AE292052B96E0040D14A /* SISwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = E808AE282052B96E0040D14A /* SISwizzling.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,9 @@
 		E808AE182052B5F50040D14A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E808AE1A2052B5F50040D14A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E808AE1B2052B5F50040D14A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E808AE262052B9060040D14A /* SIMetamacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIMetamacros.h; sourceTree = "<group>"; };
+		E808AE272052B96E0040D14A /* SISwizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SISwizzling.h; sourceTree = "<group>"; };
+		E808AE282052B96E0040D14A /* SISwizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SISwizzling.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 		E808AE222052B63D0040D14A /* SICrashGuard */ = {
 			isa = PBXGroup;
 			children = (
+				E808AE252052B8EF0040D14A /* Swizzle */,
 			);
 			path = SICrashGuard;
 			sourceTree = "<group>";
@@ -88,6 +93,16 @@
 				E808AE1B2052B5F50040D14A /* main.m */,
 			);
 			path = Others;
+			sourceTree = "<group>";
+		};
+		E808AE252052B8EF0040D14A /* Swizzle */ = {
+			isa = PBXGroup;
+			children = (
+				E808AE262052B9060040D14A /* SIMetamacros.h */,
+				E808AE272052B96E0040D14A /* SISwizzling.h */,
+				E808AE282052B96E0040D14A /* SISwizzling.m */,
+			);
+			path = Swizzle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E808AE1C2052B5F50040D14A /* main.m in Sources */,
+				E808AE292052B96E0040D14A /* SISwizzling.m in Sources */,
 				E808AE0E2052B5F50040D14A /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
