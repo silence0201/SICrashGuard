@@ -16,6 +16,7 @@
 		E808AE2D2052C2020040D14A /* UIView+Guard.m in Sources */ = {isa = PBXBuildFile; fileRef = E808AE2C2052C2020040D14A /* UIView+Guard.m */; };
 		E8CB33C7205403F500A9F165 /* SIDynamicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33C6205403F500A9F165 /* SIDynamicObject.m */; };
 		E8CB33CB20540D0900A9F165 /* NSObject+Unrecoginzed.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33CA20540D0900A9F165 /* NSObject+Unrecoginzed.m */; };
+		E8CB33CF2054171800A9F165 /* NSNotificationCenter+Remover.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33CE2054171800A9F165 /* NSNotificationCenter+Remover.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		E8CB33C5205403F500A9F165 /* SIDynamicObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIDynamicObject.h; sourceTree = "<group>"; };
 		E8CB33C6205403F500A9F165 /* SIDynamicObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIDynamicObject.m; sourceTree = "<group>"; };
 		E8CB33CA20540D0900A9F165 /* NSObject+Unrecoginzed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Unrecoginzed.m"; sourceTree = "<group>"; };
+		E8CB33CE2054171800A9F165 /* NSNotificationCenter+Remover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+Remover.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		E808AE222052B63D0040D14A /* SICrashGuard */ = {
 			isa = PBXGroup;
 			children = (
+				E8CB33CC205416F100A9F165 /* Notification */,
 				E8CB33C820540BAF00A9F165 /* Unrecoginzed */,
 				E808AE2A2052C1D90040D14A /* UI */,
 				E8CB33C42054033900A9F165 /* DynamicClass */,
@@ -138,6 +141,14 @@
 				E8CB33CA20540D0900A9F165 /* NSObject+Unrecoginzed.m */,
 			);
 			path = Unrecoginzed;
+			sourceTree = "<group>";
+		};
+		E8CB33CC205416F100A9F165 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				E8CB33CE2054171800A9F165 /* NSNotificationCenter+Remover.m */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E808AE2D2052C2020040D14A /* UIView+Guard.m in Sources */,
+				E8CB33CF2054171800A9F165 /* NSNotificationCenter+Remover.m in Sources */,
 				E808AE1C2052B5F50040D14A /* main.m in Sources */,
 				E808AE292052B96E0040D14A /* SISwizzling.m in Sources */,
 				E808AE0E2052B5F50040D14A /* AppDelegate.m in Sources */,
