@@ -18,6 +18,7 @@
 		E8CB33CB20540D0900A9F165 /* NSObject+Unrecoginzed.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33CA20540D0900A9F165 /* NSObject+Unrecoginzed.m */; };
 		E8CB33CF2054171800A9F165 /* NSNotificationCenter+Remover.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33CE2054171800A9F165 /* NSNotificationCenter+Remover.m */; };
 		E8CB33D32056B4D800A9F165 /* NSObject+KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33D22056B4D800A9F165 /* NSObject+KVO.m */; };
+		E8CB33D72056C3E300A9F165 /* NSTimer+Proxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33D62056C3E300A9F165 /* NSTimer+Proxy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		E8CB33CA20540D0900A9F165 /* NSObject+Unrecoginzed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Unrecoginzed.m"; sourceTree = "<group>"; };
 		E8CB33CE2054171800A9F165 /* NSNotificationCenter+Remover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+Remover.m"; sourceTree = "<group>"; };
 		E8CB33D22056B4D800A9F165 /* NSObject+KVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVO.m"; sourceTree = "<group>"; };
+		E8CB33D62056C3E300A9F165 /* NSTimer+Proxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Proxy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		E808AE222052B63D0040D14A /* SICrashGuard */ = {
 			isa = PBXGroup;
 			children = (
+				E8CB33D42056C39B00A9F165 /* NSTimer */,
 				E8CB33D02056B31F00A9F165 /* KVO */,
 				E8CB33CC205416F100A9F165 /* Notification */,
 				E8CB33C820540BAF00A9F165 /* Unrecoginzed */,
@@ -162,6 +165,14 @@
 			path = KVO;
 			sourceTree = "<group>";
 		};
+		E8CB33D42056C39B00A9F165 /* NSTimer */ = {
+			isa = PBXGroup;
+			children = (
+				E8CB33D62056C3E300A9F165 /* NSTimer+Proxy.m */,
+			);
+			path = NSTimer;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -233,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8CB33D72056C3E300A9F165 /* NSTimer+Proxy.m in Sources */,
 				E808AE2D2052C2020040D14A /* UIView+Guard.m in Sources */,
 				E8CB33CF2054171800A9F165 /* NSNotificationCenter+Remover.m in Sources */,
 				E808AE1C2052B5F50040D14A /* main.m in Sources */,
