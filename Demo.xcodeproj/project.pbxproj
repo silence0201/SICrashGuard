@@ -19,6 +19,7 @@
 		E8CB33CF2054171800A9F165 /* NSNotificationCenter+Remover.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33CE2054171800A9F165 /* NSNotificationCenter+Remover.m */; };
 		E8CB33D32056B4D800A9F165 /* NSObject+KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33D22056B4D800A9F165 /* NSObject+KVO.m */; };
 		E8CB33D72056C3E300A9F165 /* NSTimer+Proxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33D62056C3E300A9F165 /* NSTimer+Proxy.m */; };
+		E8CB33DB2056CADD00A9F165 /* NSNull+Guard.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33DA2056CADD00A9F165 /* NSNull+Guard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		E8CB33CE2054171800A9F165 /* NSNotificationCenter+Remover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+Remover.m"; sourceTree = "<group>"; };
 		E8CB33D22056B4D800A9F165 /* NSObject+KVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVO.m"; sourceTree = "<group>"; };
 		E8CB33D62056C3E300A9F165 /* NSTimer+Proxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Proxy.m"; sourceTree = "<group>"; };
+		E8CB33DA2056CADD00A9F165 /* NSNull+Guard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNull+Guard.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		E808AE222052B63D0040D14A /* SICrashGuard */ = {
 			isa = PBXGroup;
 			children = (
+				E8CB33D82056CAC600A9F165 /* NSNull */,
 				E8CB33D42056C39B00A9F165 /* NSTimer */,
 				E8CB33D02056B31F00A9F165 /* KVO */,
 				E8CB33CC205416F100A9F165 /* Notification */,
@@ -173,6 +176,14 @@
 			path = NSTimer;
 			sourceTree = "<group>";
 		};
+		E8CB33D82056CAC600A9F165 /* NSNull */ = {
+			isa = PBXGroup;
+			children = (
+				E8CB33DA2056CADD00A9F165 /* NSNull+Guard.m */,
+			);
+			path = NSNull;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -253,6 +264,7 @@
 				E808AE0E2052B5F50040D14A /* AppDelegate.m in Sources */,
 				E8CB33CB20540D0900A9F165 /* NSObject+Unrecoginzed.m in Sources */,
 				E8CB33C7205403F500A9F165 /* SIDynamicObject.m in Sources */,
+				E8CB33DB2056CADD00A9F165 /* NSNull+Guard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
