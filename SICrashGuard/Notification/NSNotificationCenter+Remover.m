@@ -8,10 +8,10 @@
 
 #import "SISwizzling.h"
 
-@interface __ObserverRemover : NSObject
+@interface __SIObserverRemover : NSObject
 @end
 
-@implementation __ObserverRemover {
+@implementation __SIObserverRemover {
     __strong NSMutableArray *_centers;
     __unsafe_unretained id _obs;
 }
@@ -41,12 +41,12 @@
 @end
 
 void addCenterForObserver(NSNotificationCenter *center,id obs) {
-    __ObserverRemover *remover;
+    __SIObserverRemover *remover;
     static char removerKey ;
     @autoreleasepool {
         remover = objc_getAssociatedObject(obs, &removerKey);
         if (!remover) {
-            remover = [[__ObserverRemover alloc] initWithObserver:obs];
+            remover = [[__SIObserverRemover alloc] initWithObserver:obs];
             /// 与观察者绑定
             objc_setAssociatedObject(obs, &removerKey, remover, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         }
