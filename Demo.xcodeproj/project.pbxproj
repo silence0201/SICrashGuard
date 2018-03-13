@@ -21,6 +21,7 @@
 		E8CB33D72056C3E300A9F165 /* NSTimer+Proxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33D62056C3E300A9F165 /* NSTimer+Proxy.m */; };
 		E8CB33DB2056CADD00A9F165 /* NSNull+Guard.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33DA2056CADD00A9F165 /* NSNull+Guard.m */; };
 		E8CB33DF2058055B00A9F165 /* NSArray+Guard.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33DE2058055B00A9F165 /* NSArray+Guard.m */; };
+		E8CB33E22058116000A9F165 /* NSString+Guard.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33E12058116000A9F165 /* NSString+Guard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		E8CB33D62056C3E300A9F165 /* NSTimer+Proxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Proxy.m"; sourceTree = "<group>"; };
 		E8CB33DA2056CADD00A9F165 /* NSNull+Guard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNull+Guard.m"; sourceTree = "<group>"; };
 		E8CB33DE2058055B00A9F165 /* NSArray+Guard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Guard.m"; sourceTree = "<group>"; };
+		E8CB33E12058116000A9F165 /* NSString+Guard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Guard.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				E8CB33DE2058055B00A9F165 /* NSArray+Guard.m */,
+				E8CB33E12058116000A9F165 /* NSString+Guard.m */,
 			);
 			path = Containers;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8CB33D72056C3E300A9F165 /* NSTimer+Proxy.m in Sources */,
+				E8CB33E22058116000A9F165 /* NSString+Guard.m in Sources */,
 				E808AE2D2052C2020040D14A /* UIView+Guard.m in Sources */,
 				E8CB33CF2054171800A9F165 /* NSNotificationCenter+Remover.m in Sources */,
 				E808AE1C2052B5F50040D14A /* main.m in Sources */,
