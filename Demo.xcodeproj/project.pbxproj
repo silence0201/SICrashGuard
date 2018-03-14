@@ -22,6 +22,7 @@
 		E8CB33DB2056CADD00A9F165 /* NSNull+Guard.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33DA2056CADD00A9F165 /* NSNull+Guard.m */; };
 		E8CB33DF2058055B00A9F165 /* NSArray+Guard.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33DE2058055B00A9F165 /* NSArray+Guard.m */; };
 		E8CB33E22058116000A9F165 /* NSString+Guard.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33E12058116000A9F165 /* NSString+Guard.m */; };
+		E8CB33E520595BFE00A9F165 /* NSDictionary+Guard.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33E420595BFE00A9F165 /* NSDictionary+Guard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		E8CB33DA2056CADD00A9F165 /* NSNull+Guard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNull+Guard.m"; sourceTree = "<group>"; };
 		E8CB33DE2058055B00A9F165 /* NSArray+Guard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Guard.m"; sourceTree = "<group>"; };
 		E8CB33E12058116000A9F165 /* NSString+Guard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Guard.m"; sourceTree = "<group>"; };
+		E8CB33E420595BFE00A9F165 /* NSDictionary+Guard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Guard.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 			children = (
 				E8CB33DE2058055B00A9F165 /* NSArray+Guard.m */,
 				E8CB33E12058116000A9F165 /* NSString+Guard.m */,
+				E8CB33E420595BFE00A9F165 /* NSDictionary+Guard.m */,
 			);
 			path = Containers;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				E808AE1C2052B5F50040D14A /* main.m in Sources */,
 				E808AE292052B96E0040D14A /* SISwizzling.m in Sources */,
 				E8CB33D32056B4D800A9F165 /* NSObject+KVO.m in Sources */,
+				E8CB33E520595BFE00A9F165 /* NSDictionary+Guard.m in Sources */,
 				E808AE0E2052B5F50040D14A /* AppDelegate.m in Sources */,
 				E8CB33CB20540D0900A9F165 /* NSObject+Unrecoginzed.m in Sources */,
 				E8CB33C7205403F500A9F165 /* SIDynamicObject.m in Sources */,
