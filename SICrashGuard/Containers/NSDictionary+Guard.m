@@ -58,7 +58,7 @@ SIStaticHookPrivateClass(__NSDictionaryM, NSMutableDictionary *, GuardCont, void
 }
 SIStaticHookEnd
 
-SIStaticHookPrivateClass(__NSDictionaryM, NSMutableDictionary *, ProtectCont, void, @selector(setObject:forKeyedSubscript:), (id)anObject, (id<NSCopying>)aKey) {
+SIStaticHookPrivateClass(__NSDictionaryM, NSMutableDictionary *, GuardCont, void, @selector(setObject:forKeyedSubscript:), (id)anObject, (id<NSCopying>)aKey) {
     if (anObject && aKey) {
         SIHookOrgin(anObject,aKey);
     }else {
@@ -67,7 +67,7 @@ SIStaticHookPrivateClass(__NSDictionaryM, NSMutableDictionary *, ProtectCont, vo
 }
 SIStaticHookEnd
 
-SIStaticHookPrivateClass(__NSDictionaryM, NSMutableDictionary *, ProtectCont, void, @selector(removeObjectForKey:), (id<NSCopying>)aKey ){
+SIStaticHookPrivateClass(__NSDictionaryM, NSMutableDictionary *, GuardCont, void, @selector(removeObjectForKey:), (id<NSCopying>)aKey ){
     if (aKey) {
         SIHookOrgin(aKey);
     }else {

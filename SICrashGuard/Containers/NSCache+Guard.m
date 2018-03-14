@@ -11,7 +11,7 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wstrict-prototypes"
 
-SIStaticHookClass(NSCache, ProtectCont, void, @selector(setObject:forKey:), (id)obj, (id)key) {
+SIStaticHookClass(NSCache, GuardCont, void, @selector(setObject:forKey:), (id)obj, (id)key) {
     if (obj && key) {
         SIHookOrgin(obj,key);
     } else {
@@ -20,7 +20,7 @@ SIStaticHookClass(NSCache, ProtectCont, void, @selector(setObject:forKey:), (id)
 }
 SIStaticHookEnd
 
-SIStaticHookClass(NSCache, ProtectCont, void, @selector(setObject:forKey:cost:), (id)obj, (id)key, (NSUInteger)g) {
+SIStaticHookClass(NSCache, GuardCont, void, @selector(setObject:forKey:cost:), (id)obj, (id)key, (NSUInteger)g) {
     if (obj && key) {
         SIHookOrgin(obj,key,g);
     } else {

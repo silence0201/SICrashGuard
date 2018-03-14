@@ -93,6 +93,7 @@
 		E808AE222052B63D0040D14A /* SICrashGuard */ = {
 			isa = PBXGroup;
 			children = (
+				E8CB33E92059645700A9F165 /* WildPointer */,
 				E8CB33DC2058053000A9F165 /* Containers */,
 				E8CB33D82056CAC600A9F165 /* NSNull */,
 				E8CB33D42056C39B00A9F165 /* NSTimer */,
@@ -202,6 +203,13 @@
 				E8CB33E72059638A00A9F165 /* NSCache+Guard.m */,
 			);
 			path = Containers;
+			sourceTree = "<group>";
+		};
+		E8CB33E92059645700A9F165 /* WildPointer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WildPointer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
