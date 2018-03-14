@@ -24,6 +24,8 @@
 		E8CB33E22058116000A9F165 /* NSString+Guard.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33E12058116000A9F165 /* NSString+Guard.m */; };
 		E8CB33E520595BFE00A9F165 /* NSDictionary+Guard.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33E420595BFE00A9F165 /* NSDictionary+Guard.m */; };
 		E8CB33E82059638A00A9F165 /* NSCache+Guard.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33E72059638A00A9F165 /* NSCache+Guard.m */; };
+		E8CB33EC205964EF00A9F165 /* NSObject+WildPointer.mm in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33EB205964EF00A9F165 /* NSObject+WildPointer.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		E8CB33EF205964FA00A9F165 /* SIWildPointer.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33EE205964FA00A9F165 /* SIWildPointer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,10 @@
 		E8CB33E12058116000A9F165 /* NSString+Guard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Guard.m"; sourceTree = "<group>"; };
 		E8CB33E420595BFE00A9F165 /* NSDictionary+Guard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Guard.m"; sourceTree = "<group>"; };
 		E8CB33E72059638A00A9F165 /* NSCache+Guard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSCache+Guard.m"; sourceTree = "<group>"; };
+		E8CB33EA205964EF00A9F165 /* NSObject+WildPointer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+WildPointer.h"; sourceTree = "<group>"; };
+		E8CB33EB205964EF00A9F165 /* NSObject+WildPointer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSObject+WildPointer.mm"; sourceTree = "<group>"; };
+		E8CB33ED205964FA00A9F165 /* SIWildPointer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIWildPointer.h; sourceTree = "<group>"; };
+		E8CB33EE205964FA00A9F165 /* SIWildPointer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIWildPointer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +214,10 @@
 		E8CB33E92059645700A9F165 /* WildPointer */ = {
 			isa = PBXGroup;
 			children = (
+				E8CB33EA205964EF00A9F165 /* NSObject+WildPointer.h */,
+				E8CB33EB205964EF00A9F165 /* NSObject+WildPointer.mm */,
+				E8CB33ED205964FA00A9F165 /* SIWildPointer.h */,
+				E8CB33EE205964FA00A9F165 /* SIWildPointer.m */,
 			);
 			path = WildPointer;
 			sourceTree = "<group>";
@@ -285,10 +295,12 @@
 			files = (
 				E8CB33D72056C3E300A9F165 /* NSTimer+Proxy.m in Sources */,
 				E8CB33E22058116000A9F165 /* NSString+Guard.m in Sources */,
+				E8CB33EC205964EF00A9F165 /* NSObject+WildPointer.mm in Sources */,
 				E808AE2D2052C2020040D14A /* UIView+Guard.m in Sources */,
 				E8CB33CF2054171800A9F165 /* NSNotificationCenter+Remover.m in Sources */,
 				E808AE1C2052B5F50040D14A /* main.m in Sources */,
 				E808AE292052B96E0040D14A /* SISwizzling.m in Sources */,
+				E8CB33EF205964FA00A9F165 /* SIWildPointer.m in Sources */,
 				E8CB33D32056B4D800A9F165 /* NSObject+KVO.m in Sources */,
 				E8CB33E520595BFE00A9F165 /* NSDictionary+Guard.m in Sources */,
 				E808AE0E2052B5F50040D14A /* AppDelegate.m in Sources */,
