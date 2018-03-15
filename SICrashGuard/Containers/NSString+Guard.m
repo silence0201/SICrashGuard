@@ -1,6 +1,6 @@
 //
 //  NSString+Guard.m
-//  Demo
+//  SICrashGuard
 //
 //  Created by Silence on 2018/3/13.
 //  Copyright © 2018年 Silence. All rights reserved.
