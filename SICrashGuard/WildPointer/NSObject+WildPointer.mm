@@ -33,15 +33,20 @@ static std::list<id> undellocedList;
     
     // 如果需要添加也指针保护,不销毁对象,指向Proxy对象
     if (needProtect) {
-        [SIDynamicObject shareInstance].realClass = selfClazz;
         objc_destructInstance(self);
-        object_setClass(self, [SIWildPointerProxy class]);
+        NSString *className = [NSString stringWithFormat:@"SIGuard_%@",NSStringFromClass(selfClazz)];
+        // 注册一个新子类
+        Class proxyClass = objc_allocateClassPair([SIWildPointerProxy class], [className UTF8String], 0);
+        objc_registerClassPair(proxyClass);
+        object_setClass(self, proxyClass);
         
         undellocedList.size();
         if (undellocedList.size() >= threshold) {
             id object = undellocedList.front();
+            Class objClass = [object class];
             undellocedList.pop_front();
             free(object);
+            objc_disposeClassPair(objClass);
         }
         undellocedList.push_back(self);
     } else {
