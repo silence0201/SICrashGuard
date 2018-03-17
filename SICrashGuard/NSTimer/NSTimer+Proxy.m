@@ -69,8 +69,8 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wstrict-prototypes"
 
-SIStaticHookClass(NSTimer, GuardTimer, NSTimer *, @selector(scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:),
-                  (NSTimeInterval)ti , (id)aTarget, (SEL)aSelector, (id)userInfo, (BOOL)yesOrNo) {
+SIStaticHookMetaClass(NSTimer, GuardTimer, NSTimer *, @selector(scheduledTimerWithTimeInterval:target:selector:userInfo:repeats:),
+                      (NSTimeInterval)ti , (id)aTarget, (SEL)aSelector, (id)userInfo, (BOOL)yesOrNo){
     if (yesOrNo) {
         __SITimerProxy *proxy = [[__SITimerProxy alloc]init];
         proxy.target = aTarget;
@@ -87,8 +87,8 @@ SIStaticHookClass(NSTimer, GuardTimer, NSTimer *, @selector(scheduledTimerWithTi
 
 SIStaticHookEnd
 
-SIStaticHookClass(NSTimer, GuardTimer, NSTimer *, @selector(timerWithTimeInterval:target:selector:userInfo:repeats:),
-                  (NSTimeInterval)ti , (id)aTarget, (SEL)aSelector, (id)userInfo, (BOOL)yesOrNo) {
+SIStaticHookMetaClass(NSTimer, GuardTimer, NSTimer *, @selector(timerWithTimeInterval:target:selector:userInfo:repeats:),
+                      (NSTimeInterval)ti , (id)aTarget, (SEL)aSelector, (id)userInfo, (BOOL)yesOrNo){
     if (yesOrNo) {
         __SITimerProxy *proxy = [[__SITimerProxy alloc]init];
         proxy.target = aTarget;

@@ -17,6 +17,17 @@
 		E886AF2F205CB46F007D5BF7 /* SIRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E886AF2E205CB46F007D5BF7 /* SIRecord.m */; };
 		E886AF36205CB56F007D5BF7 /* SICrashGuardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E886AF35205CB56F007D5BF7 /* SICrashGuardManager.m */; };
 		E886AF3A205CC4C2007D5BF7 /* SICallStackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E886AF39205CC4C2007D5BF7 /* SICallStackManager.m */; };
+		E886AF69205CE9E7007D5BF7 /* SIGuardSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = E886AF68205CE9E7007D5BF7 /* SIGuardSetup.m */; };
+		E886AF6D205CEB79007D5BF7 /* NSTimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E886AF6C205CEB79007D5BF7 /* NSTimerViewController.m */; };
+		E886AF71205CEB81007D5BF7 /* KVOTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E886AF70205CEB81007D5BF7 /* KVOTestViewController.m */; };
+		E886AF77205CEB87007D5BF7 /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E886AF73205CEB87007D5BF7 /* NotificationViewController.m */; };
+		E886AF78205CEB87007D5BF7 /* ObserverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E886AF76205CEB87007D5BF7 /* ObserverViewController.m */; };
+		E886AF7C205CEB8C007D5BF7 /* UITestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E886AF7B205CEB8C007D5BF7 /* UITestViewController.m */; };
+		E886AF84205CEB98007D5BF7 /* UnrecoginzedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E886AF83205CEB98007D5BF7 /* UnrecoginzedViewController.m */; };
+		E886AF87205CF765007D5BF7 /* BlockObserverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E886AF86205CF765007D5BF7 /* BlockObserverViewController.m */; };
+		E886AF8B205CFC35007D5BF7 /* NSNullTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E886AF8A205CFC35007D5BF7 /* NSNullTestViewController.m */; };
+		E886AF8D205CFD55007D5BF7 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = E886AF8C205CFD55007D5BF7 /* test.json */; };
+		E886AF91205CFFE0007D5BF7 /* ContainersTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E886AF90205CFFE0007D5BF7 /* ContainersTestViewController.m */; };
 		E8CB33C7205403F500A9F165 /* SIDynamicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33C6205403F500A9F165 /* SIDynamicObject.m */; };
 		E8CB33CB20540D0900A9F165 /* NSObject+Unrecoginzed.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33CA20540D0900A9F165 /* NSObject+Unrecoginzed.m */; };
 		E8CB33CF2054171800A9F165 /* NSNotificationCenter+Remover.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33CE2054171800A9F165 /* NSNotificationCenter+Remover.m */; };
@@ -24,7 +35,6 @@
 		E8CB33D72056C3E300A9F165 /* NSTimer+Proxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33D62056C3E300A9F165 /* NSTimer+Proxy.m */; };
 		E8CB33DB2056CADD00A9F165 /* NSNull+Guard.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33DA2056CADD00A9F165 /* NSNull+Guard.m */; };
 		E8CB33DF2058055B00A9F165 /* NSArray+Guard.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33DE2058055B00A9F165 /* NSArray+Guard.m */; };
-		E8CB33E22058116000A9F165 /* NSString+Guard.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33E12058116000A9F165 /* NSString+Guard.m */; };
 		E8CB33E520595BFE00A9F165 /* NSDictionary+Guard.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33E420595BFE00A9F165 /* NSDictionary+Guard.m */; };
 		E8CB33E82059638A00A9F165 /* NSCache+Guard.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33E72059638A00A9F165 /* NSCache+Guard.m */; };
 		E8CB33EC205964EF00A9F165 /* NSObject+WildPointer.mm in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33EB205964EF00A9F165 /* NSObject+WildPointer.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -50,6 +60,26 @@
 		E886AF35205CB56F007D5BF7 /* SICrashGuardManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SICrashGuardManager.m; sourceTree = "<group>"; };
 		E886AF38205CC4C2007D5BF7 /* SICallStackManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SICallStackManager.h; sourceTree = "<group>"; };
 		E886AF39205CC4C2007D5BF7 /* SICallStackManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SICallStackManager.m; sourceTree = "<group>"; };
+		E886AF68205CE9E7007D5BF7 /* SIGuardSetup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIGuardSetup.m; sourceTree = "<group>"; };
+		E886AF6B205CEB79007D5BF7 /* NSTimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSTimerViewController.h; sourceTree = "<group>"; };
+		E886AF6C205CEB79007D5BF7 /* NSTimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSTimerViewController.m; sourceTree = "<group>"; };
+		E886AF6F205CEB81007D5BF7 /* KVOTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVOTestViewController.h; sourceTree = "<group>"; };
+		E886AF70205CEB81007D5BF7 /* KVOTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVOTestViewController.m; sourceTree = "<group>"; };
+		E886AF73205CEB87007D5BF7 /* NotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
+		E886AF74205CEB87007D5BF7 /* ObserverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObserverViewController.h; sourceTree = "<group>"; };
+		E886AF75205CEB87007D5BF7 /* NotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
+		E886AF76205CEB87007D5BF7 /* ObserverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObserverViewController.m; sourceTree = "<group>"; };
+		E886AF7A205CEB8C007D5BF7 /* UITestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITestViewController.h; sourceTree = "<group>"; };
+		E886AF7B205CEB8C007D5BF7 /* UITestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITestViewController.m; sourceTree = "<group>"; };
+		E886AF82205CEB98007D5BF7 /* UnrecoginzedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnrecoginzedViewController.h; sourceTree = "<group>"; };
+		E886AF83205CEB98007D5BF7 /* UnrecoginzedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnrecoginzedViewController.m; sourceTree = "<group>"; };
+		E886AF85205CF765007D5BF7 /* BlockObserverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockObserverViewController.h; sourceTree = "<group>"; };
+		E886AF86205CF765007D5BF7 /* BlockObserverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockObserverViewController.m; sourceTree = "<group>"; };
+		E886AF89205CFC35007D5BF7 /* NSNullTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSNullTestViewController.h; sourceTree = "<group>"; };
+		E886AF8A205CFC35007D5BF7 /* NSNullTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSNullTestViewController.m; sourceTree = "<group>"; };
+		E886AF8C205CFD55007D5BF7 /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
+		E886AF8F205CFFE0007D5BF7 /* ContainersTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContainersTestViewController.h; sourceTree = "<group>"; };
+		E886AF90205CFFE0007D5BF7 /* ContainersTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContainersTestViewController.m; sourceTree = "<group>"; };
 		E8CB33C5205403F500A9F165 /* SIDynamicObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIDynamicObject.h; sourceTree = "<group>"; };
 		E8CB33C6205403F500A9F165 /* SIDynamicObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIDynamicObject.m; sourceTree = "<group>"; };
 		E8CB33CA20540D0900A9F165 /* NSObject+Unrecoginzed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Unrecoginzed.m"; sourceTree = "<group>"; };
@@ -58,7 +88,6 @@
 		E8CB33D62056C3E300A9F165 /* NSTimer+Proxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Proxy.m"; sourceTree = "<group>"; };
 		E8CB33DA2056CADD00A9F165 /* NSNull+Guard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNull+Guard.m"; sourceTree = "<group>"; };
 		E8CB33DE2058055B00A9F165 /* NSArray+Guard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Guard.m"; sourceTree = "<group>"; };
-		E8CB33E12058116000A9F165 /* NSString+Guard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Guard.m"; sourceTree = "<group>"; };
 		E8CB33E420595BFE00A9F165 /* NSDictionary+Guard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Guard.m"; sourceTree = "<group>"; };
 		E8CB33E72059638A00A9F165 /* NSCache+Guard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSCache+Guard.m"; sourceTree = "<group>"; };
 		E8CB33EA205964EF00A9F165 /* NSObject+WildPointer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+WildPointer.h"; sourceTree = "<group>"; };
@@ -98,6 +127,13 @@
 		E808AE0B2052B5F50040D14A /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				E886AF8E205CFF7C007D5BF7 /* ContainersTest */,
+				E886AF88205CFC22007D5BF7 /* NSNullTest */,
+				E886AF81205CEB98007D5BF7 /* Unrecoginzed */,
+				E886AF79205CEB8C007D5BF7 /* UITest */,
+				E886AF72205CEB87007D5BF7 /* NotificationTest */,
+				E886AF6E205CEB81007D5BF7 /* KVOTest */,
+				E886AF6A205CEB79007D5BF7 /* NSTimerTest */,
 				E808AE242052B6960040D14A /* Others */,
 				E808AE232052B6860040D14A /* Resource */,
 				E808AE1A2052B5F50040D14A /* Info.plist */,
@@ -128,6 +164,7 @@
 		E808AE232052B6860040D14A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E886AF8C205CFD55007D5BF7 /* test.json */,
 				E808AE122052B5F50040D14A /* Main.storyboard */,
 				E808AE152052B5F50040D14A /* Assets.xcassets */,
 				E808AE172052B5F50040D14A /* LaunchScreen.storyboard */,
@@ -140,6 +177,7 @@
 			children = (
 				E808AE0C2052B5F50040D14A /* AppDelegate.h */,
 				E808AE0D2052B5F50040D14A /* AppDelegate.m */,
+				E886AF68205CE9E7007D5BF7 /* SIGuardSetup.m */,
 				E808AE1B2052B5F50040D14A /* main.m */,
 			);
 			path = Others;
@@ -188,6 +226,73 @@
 				E886AF39205CC4C2007D5BF7 /* SICallStackManager.m */,
 			);
 			path = CallStack;
+			sourceTree = "<group>";
+		};
+		E886AF6A205CEB79007D5BF7 /* NSTimerTest */ = {
+			isa = PBXGroup;
+			children = (
+				E886AF6B205CEB79007D5BF7 /* NSTimerViewController.h */,
+				E886AF6C205CEB79007D5BF7 /* NSTimerViewController.m */,
+			);
+			path = NSTimerTest;
+			sourceTree = "<group>";
+		};
+		E886AF6E205CEB81007D5BF7 /* KVOTest */ = {
+			isa = PBXGroup;
+			children = (
+				E886AF6F205CEB81007D5BF7 /* KVOTestViewController.h */,
+				E886AF70205CEB81007D5BF7 /* KVOTestViewController.m */,
+			);
+			path = KVOTest;
+			sourceTree = "<group>";
+		};
+		E886AF72205CEB87007D5BF7 /* NotificationTest */ = {
+			isa = PBXGroup;
+			children = (
+				E886AF75205CEB87007D5BF7 /* NotificationViewController.h */,
+				E886AF73205CEB87007D5BF7 /* NotificationViewController.m */,
+				E886AF76205CEB87007D5BF7 /* ObserverViewController.m */,
+				E886AF74205CEB87007D5BF7 /* ObserverViewController.h */,
+				E886AF85205CF765007D5BF7 /* BlockObserverViewController.h */,
+				E886AF86205CF765007D5BF7 /* BlockObserverViewController.m */,
+			);
+			path = NotificationTest;
+			sourceTree = "<group>";
+		};
+		E886AF79205CEB8C007D5BF7 /* UITest */ = {
+			isa = PBXGroup;
+			children = (
+				E886AF7A205CEB8C007D5BF7 /* UITestViewController.h */,
+				E886AF7B205CEB8C007D5BF7 /* UITestViewController.m */,
+			);
+			path = UITest;
+			sourceTree = "<group>";
+		};
+		E886AF81205CEB98007D5BF7 /* Unrecoginzed */ = {
+			isa = PBXGroup;
+			children = (
+				E886AF82205CEB98007D5BF7 /* UnrecoginzedViewController.h */,
+				E886AF83205CEB98007D5BF7 /* UnrecoginzedViewController.m */,
+			);
+			path = Unrecoginzed;
+			sourceTree = "<group>";
+		};
+		E886AF88205CFC22007D5BF7 /* NSNullTest */ = {
+			isa = PBXGroup;
+			children = (
+				E886AF89205CFC35007D5BF7 /* NSNullTestViewController.h */,
+				E886AF8A205CFC35007D5BF7 /* NSNullTestViewController.m */,
+			);
+			path = NSNullTest;
+			sourceTree = "<group>";
+		};
+		E886AF8E205CFF7C007D5BF7 /* ContainersTest */ = {
+			isa = PBXGroup;
+			children = (
+				E886AF8F205CFFE0007D5BF7 /* ContainersTestViewController.h */,
+				E886AF90205CFFE0007D5BF7 /* ContainersTestViewController.m */,
+			);
+			path = ContainersTest;
 			sourceTree = "<group>";
 		};
 		E8CB33C42054033900A9F165 /* DynamicClass */ = {
@@ -243,7 +348,6 @@
 			isa = PBXGroup;
 			children = (
 				E8CB33DE2058055B00A9F165 /* NSArray+Guard.m */,
-				E8CB33E12058116000A9F165 /* NSString+Guard.m */,
 				E8CB33E420595BFE00A9F165 /* NSDictionary+Guard.m */,
 				E8CB33E72059638A00A9F165 /* NSCache+Guard.m */,
 			);
@@ -320,6 +424,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E808AE192052B5F50040D14A /* LaunchScreen.storyboard in Resources */,
+				E886AF8D205CFD55007D5BF7 /* test.json in Resources */,
 				E808AE162052B5F50040D14A /* Assets.xcassets in Resources */,
 				E808AE142052B5F50040D14A /* Main.storyboard in Resources */,
 			);
@@ -333,21 +438,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8CB33D72056C3E300A9F165 /* NSTimer+Proxy.m in Sources */,
-				E8CB33E22058116000A9F165 /* NSString+Guard.m in Sources */,
 				E8CB33EC205964EF00A9F165 /* NSObject+WildPointer.mm in Sources */,
+				E886AF6D205CEB79007D5BF7 /* NSTimerViewController.m in Sources */,
 				E808AE2D2052C2020040D14A /* UIView+Guard.m in Sources */,
+				E886AF7C205CEB8C007D5BF7 /* UITestViewController.m in Sources */,
+				E886AF71205CEB81007D5BF7 /* KVOTestViewController.m in Sources */,
 				E8CB33CF2054171800A9F165 /* NSNotificationCenter+Remover.m in Sources */,
+				E886AF69205CE9E7007D5BF7 /* SIGuardSetup.m in Sources */,
 				E808AE1C2052B5F50040D14A /* main.m in Sources */,
 				E808AE292052B96E0040D14A /* SISwizzling.m in Sources */,
 				E8CB33EF205964FA00A9F165 /* SIWildPointer.m in Sources */,
 				E8CB33D32056B4D800A9F165 /* NSObject+KVO.m in Sources */,
+				E886AF8B205CFC35007D5BF7 /* NSNullTestViewController.m in Sources */,
 				E8CB33E520595BFE00A9F165 /* NSDictionary+Guard.m in Sources */,
 				E808AE0E2052B5F50040D14A /* AppDelegate.m in Sources */,
 				E8CB33CB20540D0900A9F165 /* NSObject+Unrecoginzed.m in Sources */,
+				E886AF84205CEB98007D5BF7 /* UnrecoginzedViewController.m in Sources */,
+				E886AF77205CEB87007D5BF7 /* NotificationViewController.m in Sources */,
 				E8CB33C7205403F500A9F165 /* SIDynamicObject.m in Sources */,
 				E8CB33E82059638A00A9F165 /* NSCache+Guard.m in Sources */,
+				E886AF78205CEB87007D5BF7 /* ObserverViewController.m in Sources */,
 				E8CB33DB2056CADD00A9F165 /* NSNull+Guard.m in Sources */,
+				E886AF91205CFFE0007D5BF7 /* ContainersTestViewController.m in Sources */,
 				E8CB33DF2058055B00A9F165 /* NSArray+Guard.m in Sources */,
+				E886AF87205CF765007D5BF7 /* BlockObserverViewController.m in Sources */,
 				E886AF2F205CB46F007D5BF7 /* SIRecord.m in Sources */,
 				E886AF3A205CC4C2007D5BF7 /* SICallStackManager.m in Sources */,
 				E886AF36205CB56F007D5BF7 /* SICrashGuardManager.m in Sources */,

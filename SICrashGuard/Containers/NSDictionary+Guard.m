@@ -26,8 +26,27 @@ NSMutableDictionary->Methods On Protection:
 #pragma clang diagnostic ignored "-Wstrict-prototypes"
 
 #pragma mark -- NSDictionary
-SIStaticHookClass(NSDictionary, GuardCont, NSDictionary *, @selector(dictionaryWithObjects:forKeys:count:),
-                  (const id *) objects, (const id<NSCopying> *) keys, (NSUInteger)cnt) {
+SIStaticHookMetaClass(NSDictionary, GuardCont, NSDictionary *, @selector(dictionaryWithObjects:forKeys:count:),
+                      (const id *) objects, (const id<NSCopying> *) keys, (NSUInteger)cnt){
+    NSUInteger index = 0;
+    id  _Nonnull __unsafe_unretained newObjects[cnt];
+    id  _Nonnull __unsafe_unretained newkeys[cnt];
+    for (int i = 0; i < cnt; i++) {
+        id tmpItem = objects[i];
+        id tmpKey = keys[i];
+        if (tmpItem == nil || tmpKey == nil) {
+            continue;
+        }
+        newObjects[index] = objects[i];
+        newkeys[index] = keys[i];
+        index++;
+    }
+    return SIHookOrgin(newObjects, newkeys,index);
+}
+
+SIStaticHookEnd
+
+SIStaticHookPrivateClass(__NSPlaceholderDictionary, NSDictionary *, GuardCont, NSDictionary *, @selector(initWithObjects:forKeys:count:), (const id *) objects, (const id<NSCopying> *) keys, (NSUInteger)cnt ) {
     NSUInteger index = 0;
     id  _Nonnull __unsafe_unretained newObjects[cnt];
     id  _Nonnull __unsafe_unretained newkeys[cnt];
@@ -44,6 +63,7 @@ SIStaticHookClass(NSDictionary, GuardCont, NSDictionary *, @selector(dictionaryW
     return SIHookOrgin(newObjects, newkeys,index);
 }
 SIStaticHookEnd
+
 
 #pragma mark -- NSMutableDictionary
 SIStaticHookPrivateClass(__NSDictionaryM, NSMutableDictionary *, GuardCont, void, @selector(setObject:forKey:), (id)anObject, (id<NSCopying>)aKey ) {

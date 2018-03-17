@@ -55,6 +55,12 @@ SIStaticHookClass(NSObject, GuardUR, id, @selector(forwardingTargetForSelector:)
         SIDynamicObject *obj = [SIDynamicObject shareInstance];
         obj.realClass = [self class];
         [obj addFunc:aSelector];
+        
+        NSString *className = NSStringFromClass(obj.realClass);
+        NSString *selName = NSStringFromSelector(obj.realSEL);
+        NSString *reason = [NSString stringWithFormat:@"[%@ %@]:Unrecoginzed Selector",className,selName];
+        [SIRecord recordFatalWithReason:reason errorType:SIGuardTypeUnrecognizedSelector];
+        
         return obj;
     }
 }

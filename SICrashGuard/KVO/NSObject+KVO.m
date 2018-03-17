@@ -30,12 +30,10 @@ static void(*__si_hook_orgin_function_removeObserver)(NSObject* self, SEL _cmd ,
 }
 
 - (void)dealloc {
-    @autoreleasepool {
-        NSDictionary<NSString *,NSHashTable<NSObject *> *> *kvoInfos = self.kvoInfoMap.copy;
-        for (NSString *keyPath in kvoInfos) {
-            // 调用removeObserver:forKeyPath:
-            __si_hook_orgin_function_removeObserver(_observed,@selector(removeObserver:forKeyPath:),self,keyPath);
-        }
+    NSDictionary<NSString *,NSHashTable<NSObject *> *> *kvoInfos = self.kvoInfoMap.copy;
+    for (NSString *keyPath in kvoInfos) {
+        // 调用removeObserver:forKeyPath:
+        __si_hook_orgin_function_removeObserver(_observed,@selector(removeObserver:forKeyPath:),self,keyPath);
     }
 }
 
@@ -87,9 +85,9 @@ static void(*__si_hook_orgin_function_removeObserver)(NSObject* self, SEL _cmd ,
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wstrict-prototypes"
 
-SIStaticHookClass(NSObject, GuardKVO, void, @selector(addObserver:selector:name:object:),(NSObject *)observer, (NSString *)keyPath,(NSKeyValueObservingOptions)options, (void *)context) {
+SIStaticHookClass(NSObject, GuardKVO, void, @selector(addObserver:forKeyPath:options:context:),(NSObject *)observer, (NSString *)keyPath,(NSKeyValueObservingOptions)options, (void *)context) {
     if(!self.kvoProxy) {
-        self.kvoProxy = [[__SIKVOProxy alloc]initWithObserverd:observer];
+        self.kvoProxy = [[__SIKVOProxy alloc]initWithObserverd:self];
     }
     
     NSHashTable<NSObject *> *os = self.kvoProxy.kvoInfoMap[keyPath];
@@ -122,7 +120,6 @@ SIStaticHookEnd
 SIStaticHookClass(NSObject, GuardKVO, void, @selector(removeObserver:forKeyPath:),
                   (NSObject *)observer, (NSString *)keyPath) {
     NSHashTable<NSObject *> *os = self.kvoProxy.kvoInfoMap[keyPath];
-    
     if (![os containsObject:observer]) {
         // 移除一个不存在的监听
         NSString *className = NSStringFromClass(self.class);

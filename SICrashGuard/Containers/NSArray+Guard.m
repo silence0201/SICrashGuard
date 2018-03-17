@@ -48,6 +48,12 @@ SIStaticHookPrivateClass(__NSSingleObjectArrayI, NSArray *, GuardCont, id, @sele
 }
 SIStaticHookEnd
 
+SIStaticHookPrivateClass(__NSArrayI, NSArray *, GuardCont, id, @selector(objectAtIndex:), (NSUInteger)index) {
+    if (index >= self.count) return nil;
+    return SIHookOrgin(index);
+}
+SIStaticHookEnd
+
 SIStaticHookPrivateClass(__NSArrayI, NSArray *, GuardCont, id, @selector(objectAtIndexedSubscript:), (NSUInteger)index) {
     if (index >= self.count) return nil;
     return SIHookOrgin(index);
@@ -122,6 +128,11 @@ SIStaticHookPrivateClass(__NSPlaceholderArray, NSArray *, GuardCont, NSArray *, 
 SIStaticHookEnd
 
 #pragma mark -- NSMutableArray
+SIStaticHookPrivateClass(__NSArrayM, NSArray *, GuardCont, id, @selector(objectAtIndex:), (NSUInteger)index) {
+    if (index >= self.count) return nil;
+    return SIHookOrgin(index);
+}
+SIStaticHookEnd
 
 SIStaticHookPrivateClass(__NSArrayM, NSMutableArray *, GuardCont, id, @selector(objectAtIndexedSubscript:), (NSUInteger)index) {
     if (index >= self.count) return nil;
@@ -150,10 +161,37 @@ SIStaticHookPrivateClass(__NSArrayM,NSMutableArray *, GuardCont, void, @selector
 }
 SIStaticHookEnd
 
+SIStaticHookPrivateClass(__NSArrayM,NSMutableArray *, GuardCont, void, @selector(removeObjectsInRange:), (NSRange)index) {
+    if (index.location + index.length <= self.count) {
+        SIHookOrgin(index);
+    }
+}
+SIStaticHookEnd
+
+SIStaticHookPrivateClass(__NSArrayM,NSMutableArray *, GuardCont, void, @selector(removeObjectsAtIndexes:), (NSIndexSet *)index) {
+    if (index.lastIndex <= self.count && index.firstIndex <= self.count) {
+        SIHookOrgin(index);
+    }
+}
+SIStaticHookEnd
+
 SIStaticHookPrivateClass(__NSArrayM, NSMutableArray *, GuardCont, void, @selector(setObject:atIndexedSubscript:), (id) obj, (NSUInteger) idx) {
     if (obj && idx < self.count) {
         SIHookOrgin(obj, idx);
     }
+}
+SIStaticHookEnd
+
+SIStaticHookPrivateClass(__NSArrayM, NSMutableArray *, GuardCont, void, @selector(replaceObjectAtIndex:withObject:), (NSUInteger) idx, (id) obj) {
+    if (obj && idx < self.count) {
+        SIHookOrgin(idx,obj);
+    }
+}
+SIStaticHookEnd
+
+SIStaticHookClass(NSArray, GuardCont, id, @selector(objectsAtIndexes:), (NSIndexSet *)index) {
+    if (index.lastIndex >= self.count || index.firstIndex >= self.count) return nil;
+    return SIHookOrgin(index);
 }
 SIStaticHookEnd
 

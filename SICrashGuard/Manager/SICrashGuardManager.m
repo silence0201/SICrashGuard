@@ -77,6 +77,7 @@
 + (void)registerNotification {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
+        guard_hook_load_group(SIForOCString(GuardNoti));
         BOOL ABOVE_IOS8  = (([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) ? YES : NO);
         if (!ABOVE_IOS8) {
             guard_hook_load_group(SIForOCString(GuardNoti));
