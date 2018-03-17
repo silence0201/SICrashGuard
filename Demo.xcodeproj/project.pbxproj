@@ -14,6 +14,9 @@
 		E808AE1C2052B5F50040D14A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E808AE1B2052B5F50040D14A /* main.m */; };
 		E808AE292052B96E0040D14A /* SISwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = E808AE282052B96E0040D14A /* SISwizzling.m */; };
 		E808AE2D2052C2020040D14A /* UIView+Guard.m in Sources */ = {isa = PBXBuildFile; fileRef = E808AE2C2052C2020040D14A /* UIView+Guard.m */; };
+		E886AF2F205CB46F007D5BF7 /* SIRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E886AF2E205CB46F007D5BF7 /* SIRecord.m */; };
+		E886AF36205CB56F007D5BF7 /* SICrashGuardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E886AF35205CB56F007D5BF7 /* SICrashGuardManager.m */; };
+		E886AF3A205CC4C2007D5BF7 /* SICallStackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E886AF39205CC4C2007D5BF7 /* SICallStackManager.m */; };
 		E8CB33C7205403F500A9F165 /* SIDynamicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33C6205403F500A9F165 /* SIDynamicObject.m */; };
 		E8CB33CB20540D0900A9F165 /* NSObject+Unrecoginzed.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33CA20540D0900A9F165 /* NSObject+Unrecoginzed.m */; };
 		E8CB33CF2054171800A9F165 /* NSNotificationCenter+Remover.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CB33CE2054171800A9F165 /* NSNotificationCenter+Remover.m */; };
@@ -41,6 +44,12 @@
 		E808AE272052B96E0040D14A /* SISwizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SISwizzling.h; sourceTree = "<group>"; };
 		E808AE282052B96E0040D14A /* SISwizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SISwizzling.m; sourceTree = "<group>"; };
 		E808AE2C2052C2020040D14A /* UIView+Guard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Guard.m"; sourceTree = "<group>"; };
+		E886AF2D205CB46F007D5BF7 /* SIRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIRecord.h; sourceTree = "<group>"; };
+		E886AF2E205CB46F007D5BF7 /* SIRecord.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIRecord.m; sourceTree = "<group>"; };
+		E886AF34205CB56F007D5BF7 /* SICrashGuardManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SICrashGuardManager.h; sourceTree = "<group>"; };
+		E886AF35205CB56F007D5BF7 /* SICrashGuardManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SICrashGuardManager.m; sourceTree = "<group>"; };
+		E886AF38205CC4C2007D5BF7 /* SICallStackManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SICallStackManager.h; sourceTree = "<group>"; };
+		E886AF39205CC4C2007D5BF7 /* SICallStackManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SICallStackManager.m; sourceTree = "<group>"; };
 		E8CB33C5205403F500A9F165 /* SIDynamicObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIDynamicObject.h; sourceTree = "<group>"; };
 		E8CB33C6205403F500A9F165 /* SIDynamicObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIDynamicObject.m; sourceTree = "<group>"; };
 		E8CB33CA20540D0900A9F165 /* NSObject+Unrecoginzed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Unrecoginzed.m"; sourceTree = "<group>"; };
@@ -99,6 +108,9 @@
 		E808AE222052B63D0040D14A /* SICrashGuard */ = {
 			isa = PBXGroup;
 			children = (
+				E886AF37205CC4C2007D5BF7 /* CallStack */,
+				E886AF33205CB4B2007D5BF7 /* Manager */,
+				E886AF2C205CB441007D5BF7 /* Record */,
 				E8CB33E92059645700A9F165 /* WildPointer */,
 				E8CB33DC2058053000A9F165 /* Containers */,
 				E8CB33D82056CAC600A9F165 /* NSNull */,
@@ -149,6 +161,33 @@
 				E808AE2C2052C2020040D14A /* UIView+Guard.m */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		E886AF2C205CB441007D5BF7 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				E886AF2D205CB46F007D5BF7 /* SIRecord.h */,
+				E886AF2E205CB46F007D5BF7 /* SIRecord.m */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		E886AF33205CB4B2007D5BF7 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E886AF34205CB56F007D5BF7 /* SICrashGuardManager.h */,
+				E886AF35205CB56F007D5BF7 /* SICrashGuardManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		E886AF37205CC4C2007D5BF7 /* CallStack */ = {
+			isa = PBXGroup;
+			children = (
+				E886AF38205CC4C2007D5BF7 /* SICallStackManager.h */,
+				E886AF39205CC4C2007D5BF7 /* SICallStackManager.m */,
+			);
+			path = CallStack;
 			sourceTree = "<group>";
 		};
 		E8CB33C42054033900A9F165 /* DynamicClass */ = {
@@ -309,6 +348,9 @@
 				E8CB33E82059638A00A9F165 /* NSCache+Guard.m in Sources */,
 				E8CB33DB2056CADD00A9F165 /* NSNull+Guard.m in Sources */,
 				E8CB33DF2058055B00A9F165 /* NSArray+Guard.m in Sources */,
+				E886AF2F205CB46F007D5BF7 /* SIRecord.m in Sources */,
+				E886AF3A205CC4C2007D5BF7 /* SICallStackManager.m in Sources */,
+				E886AF36205CB56F007D5BF7 /* SICrashGuardManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
