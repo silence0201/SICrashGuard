@@ -35,14 +35,12 @@ SIStaticHookClass(NSDictionary, GuardCont, NSDictionary *, @selector(dictionaryW
         id tmpItem = objects[i];
         id tmpKey = keys[i];
         if (tmpItem == nil || tmpKey == nil) {
-            // 错误处理
             continue;
         }
         newObjects[index] = objects[i];
         newkeys[index] = keys[i];
         index++;
     }
-    
     return SIHookOrgin(newObjects, newkeys,index);
 }
 SIStaticHookEnd
@@ -51,18 +49,13 @@ SIStaticHookEnd
 SIStaticHookPrivateClass(__NSDictionaryM, NSMutableDictionary *, GuardCont, void, @selector(setObject:forKey:), (id)anObject, (id<NSCopying>)aKey ) {
     if (anObject && aKey) {
         SIHookOrgin(anObject,aKey);
-    } else {
-        // 错误处理
     }
-    
 }
 SIStaticHookEnd
 
 SIStaticHookPrivateClass(__NSDictionaryM, NSMutableDictionary *, GuardCont, void, @selector(setObject:forKeyedSubscript:), (id)anObject, (id<NSCopying>)aKey) {
     if (anObject && aKey) {
         SIHookOrgin(anObject,aKey);
-    }else {
-        // 错误处理
     }
 }
 SIStaticHookEnd
@@ -70,8 +63,6 @@ SIStaticHookEnd
 SIStaticHookPrivateClass(__NSDictionaryM, NSMutableDictionary *, GuardCont, void, @selector(removeObjectForKey:), (id<NSCopying>)aKey ){
     if (aKey) {
         SIHookOrgin(aKey);
-    }else {
-        // 错误处理
     }
 }
 SIStaticHookEnd

@@ -67,7 +67,6 @@ SIStaticHookPrivateMetaClass(__NSSingleObjectArrayI, NSArray *, GuardCont, NSArr
     for (int i = 0; i < cnt; i++) {
         id objc = objects[i];
         if (objc == nil) {
-            // 报告错误
             continue;
         }
         objectsNew[index++] = objc;
@@ -83,7 +82,6 @@ SIStaticHookPrivateMetaClass(__NSArrayI, NSArray *, GuardCont, NSArray *, @selec
     for (int i = 0; i < cnt; i++) {
         id objc = objects[i];
         if (objc == nil) {
-            // 报告错误
             continue;
         }
         objectsNew[index++] = objc;
@@ -99,7 +97,6 @@ SIStaticHookPrivateMetaClass(__NSArray0, NSArray *, GuardCont, NSArray *, @selec
     for (int i = 0; i < cnt; i++) {
         id objc = objects[i];
         if (objc == nil) {
-            // 报告错误
             continue;
         }
         objectsNew[index++] = objc;
@@ -115,7 +112,6 @@ SIStaticHookPrivateClass(__NSPlaceholderArray, NSArray *, GuardCont, NSArray *, 
     for (int i = 0; i < cnt; i++) {
         id objc = objects[i];
         if (objc == nil) {
-            // 报告错误
             continue;
         }
         objectsNew[index++] = objc;
@@ -128,10 +124,7 @@ SIStaticHookEnd
 #pragma mark -- NSMutableArray
 
 SIStaticHookPrivateClass(__NSArrayM, NSMutableArray *, GuardCont, id, @selector(objectAtIndexedSubscript:), (NSUInteger)index) {
-    if (index >= self.count) {
-        return nil;
-    }
-    
+    if (index >= self.count) return nil;
     return SIHookOrgin(index);
 }
 SIStaticHookEnd
@@ -144,7 +137,7 @@ SIStaticHookPrivateClass(__NSArrayM, NSMutableArray *, GuardCont, void, @selecto
 SIStaticHookEnd
 
 SIStaticHookPrivateClass(__NSArrayM, NSMutableArray *, GuardCont, void, @selector(insertObject:atIndex:), (id)anObject, (NSUInteger)index) {
-    if (anObject) {
+    if (anObject && index <= self.count) {
         SIHookOrgin(anObject, index);
     }
 }
@@ -153,19 +146,13 @@ SIStaticHookEnd
 SIStaticHookPrivateClass(__NSArrayM,NSMutableArray *, GuardCont, void, @selector(removeObjectAtIndex:), (NSUInteger)index) {
     if (index < self.count) {
         SIHookOrgin(index);
-    } else {
-        
     }
 }
 SIStaticHookEnd
 
 SIStaticHookPrivateClass(__NSArrayM, NSMutableArray *, GuardCont, void, @selector(setObject:atIndexedSubscript:), (id) obj, (NSUInteger) idx) {
-    if (obj) {
-        if (idx < self.count) {
-            SIHookOrgin(obj, idx);
-        } else {
-            
-        }
+    if (obj && idx < self.count) {
+        SIHookOrgin(obj, idx);
     }
 }
 SIStaticHookEnd

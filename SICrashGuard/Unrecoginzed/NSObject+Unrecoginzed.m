@@ -9,6 +9,7 @@
 #import <objc/runtime.h>
 #import "SISwizzling.h"
 #import "SIDynamicObject.h"
+#import "SIRecord.h"
 
 static inline BOOL IsSystemClass(Class clazz) {
     BOOL isSystem = NO;
@@ -76,6 +77,11 @@ SIStaticHookMetaClass(NSObject, GuardUR, id, @selector(forwardingTargetForSelect
         SIDynamicObject *obj = [SIDynamicObject shareInstance];
         obj.realClass = [self class];
         [[obj class] addClassFunc:aSelector];
+        
+        NSString *className = NSStringFromClass(obj.realClass);
+        NSString *selName = NSStringFromSelector(obj.realSEL);
+        NSString *reason = [NSString stringWithFormat:@"[%@ %@]:Unrecoginzed Selector",className,selName];
+        [SIRecord recordFatalWithReason:reason errorType:SIGuardTypeUnrecognizedSelector];
         return obj;
     }
 }

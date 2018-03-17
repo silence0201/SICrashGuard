@@ -7,6 +7,7 @@
 //
 
 #import "SISwizzling.h"
+#import "SIRecord.h"
 
 static void(*__si_hook_orgin_function_removeObserver)(NSObject* self, SEL _cmd ,NSObject *observer ,NSString *keyPath) = ((void*)0);
 
@@ -52,7 +53,8 @@ static void(*__si_hook_orgin_function_removeObserver)(NSObject* self, SEL _cmd ,
         @try {
             [observer observeValueForKeyPath:keyPath ofObject:object change:change context:context];
         } @catch (NSException *exception) {
-            
+            NSString *reason = [NSString stringWithFormat:@"%@:KVO异常",exception.name];
+            [SIRecord recordFatalWithReason:reason errorType:SIGuardTypeKVO];
         }
     }
 }
@@ -96,7 +98,7 @@ SIStaticHookClass(NSObject, GuardKVO, void, @selector(addObserver:selector:name:
         os = [[NSHashTable alloc]initWithOptions:NSPointerFunctionsWeakMemory capacity:0];
         [os addObject:observer];
         
-        // 只需要第一次调用的时候调用原方法
+        // 只需要第一次调用的时候调用,将监听者转移到Proxy
         SIHookOrgin(self.kvoProxy,keyPath,options,context);
         
         self.kvoProxy.kvoInfoMap[keyPath] = os;
@@ -105,6 +107,10 @@ SIStaticHookClass(NSObject, GuardKVO, void, @selector(addObserver:selector:name:
     
     if ([os containsObject:observer]) {
         // 多次添加处理
+        NSString *className = NSStringFromClass(self.class);
+        NSString *selName = NSStringFromSelector(@selector(addObserver:selector:name:object:));
+        NSString *reason = [NSString stringWithFormat:@"[%@ %@],Observer:%@ KeyPath:%@  : KVO错误,重复添加监听者",className,selName,observer,keyPath];
+        [SIRecord recordFatalWithReason:reason errorType:SIGuardTypeKVO];
         return;
     }
     
@@ -119,6 +125,10 @@ SIStaticHookClass(NSObject, GuardKVO, void, @selector(removeObserver:forKeyPath:
     
     if (![os containsObject:observer]) {
         // 移除一个不存在的监听
+        NSString *className = NSStringFromClass(self.class);
+        NSString *selName = NSStringFromSelector(@selector(removeObserver:forKeyPath:));
+        NSString *reason = [NSString stringWithFormat:@"[%@ %@],Observer:%@ KeyPath:%@  : KVO错误,移除一个不存在的监听者",className,selName,observer,keyPath];
+        [SIRecord recordFatalWithReason:reason errorType:SIGuardTypeKVO];
         return;
     }
     

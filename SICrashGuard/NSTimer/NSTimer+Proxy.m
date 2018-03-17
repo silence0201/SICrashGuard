@@ -7,12 +7,15 @@
 //
 
 #import "SISwizzling.h"
+#import "SIRecord.h"
 
 @interface __SITimerProxy : NSObject
 
 @property (nonatomic,weak) NSTimer *sourceTimer ;
 @property (nonatomic,weak) id target ;
 @property (nonatomic) SEL aSelector;
+
+@property (nonatomic,strong) NSString *className;
 
 @end
 
@@ -28,6 +31,11 @@
 #pragma clang diagnostic pop
     }else {
         // target已经销毁或者其他原因无法触发
+        NSString *className = self.className;
+        NSString *selName = NSStringFromSelector(self.aSelector);
+        NSString *reason = [NSString stringWithFormat:@"[%@ %@],Timer:%@ 没有正确移除",className,selName,self.sourceTimer];
+        [SIRecord recordFatalWithReason:reason errorType:SIGuardTypeTimer];
+        
         NSTimer *sourceTimer = self.sourceTimer;
         if(sourceTimer){
             // 将timer移除RunLoop
@@ -66,6 +74,7 @@ SIStaticHookClass(NSTimer, GuardTimer, NSTimer *, @selector(scheduledTimerWithTi
     if (yesOrNo) {
         __SITimerProxy *proxy = [[__SITimerProxy alloc]init];
         proxy.target = aTarget;
+        proxy.className = NSStringFromClass([aTarget class]);
         proxy.aSelector = aSelector;
         NSTimer *timer = SIHookOrgin(ti,proxy,@selector(trigger:),userInfo,yesOrNo);
         timer.timerProxy = proxy;

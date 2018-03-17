@@ -25,7 +25,6 @@ SIStaticHookClass(NSNull, GuardNull, id, @selector(forwardingTargetForSelector:)
             return tmpObj;
         }
     }
-    
     return SIHookOrgin(aSelector);
 }
 

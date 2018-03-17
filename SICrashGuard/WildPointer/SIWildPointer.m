@@ -8,6 +8,7 @@
 
 #import "SIWildPointer.h"
 #import "SIDynamicObject.h"
+#import "SIRecord.h"
 
 @implementation SIWildPointerManager
 
@@ -35,12 +36,15 @@
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
     SIDynamicObject *obj = [SIDynamicObject shareInstance];
     [obj addFunc:aSelector];
-    
     return [[SIDynamicObject class] instanceMethodSignatureForSelector:aSelector];
 }
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
     // 报告错误
+    NSString *className = NSStringFromClass([self class]);
+    NSString *selName = NSStringFromSelector(anInvocation.selector);
+    NSString *reason = [NSString stringWithFormat:@"[%@ %@]:野指针异常",className,selName];
+    [SIRecord recordFatalWithReason:reason errorType:SIGuardTypeWildPointer];
     
     // 转发invocation
     [anInvocation invokeWithTarget:[SIDynamicObject shareInstance]];
