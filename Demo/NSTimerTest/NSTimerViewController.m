@@ -21,6 +21,7 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
 //    if (self.timer) {
 //        [self.timer invalidate];   // 移除runloop
 //        self.timer = nil ;   // 解决循环引用
