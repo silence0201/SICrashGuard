@@ -14,7 +14,7 @@
 		E808AE1C2052B5F50040D14A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E808AE1B2052B5F50040D14A /* main.m */; };
 		E808AE292052B96E0040D14A /* SISwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = E808AE282052B96E0040D14A /* SISwizzling.m */; };
 		E808AE2D2052C2020040D14A /* UIView+Guard.m in Sources */ = {isa = PBXBuildFile; fileRef = E808AE2C2052C2020040D14A /* UIView+Guard.m */; };
-		E83E1ADE205E711B00DF17B7 /* WildPointerTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E83E1ADC205E711B00DF17B7 /* WildPointerTestViewController.m */; };
+		E83E1ADE205E711B00DF17B7 /* WildPointerTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E83E1ADC205E711B00DF17B7 /* WildPointerTestViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E886AF2F205CB46F007D5BF7 /* SIRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E886AF2E205CB46F007D5BF7 /* SIRecord.m */; };
 		E886AF36205CB56F007D5BF7 /* SICrashGuardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E886AF35205CB56F007D5BF7 /* SICrashGuardManager.m */; };
 		E886AF3A205CC4C2007D5BF7 /* SICallStackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E886AF39205CC4C2007D5BF7 /* SICallStackManager.m */; };
