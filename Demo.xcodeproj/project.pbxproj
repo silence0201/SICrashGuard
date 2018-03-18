@@ -14,6 +14,7 @@
 		E808AE1C2052B5F50040D14A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E808AE1B2052B5F50040D14A /* main.m */; };
 		E808AE292052B96E0040D14A /* SISwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = E808AE282052B96E0040D14A /* SISwizzling.m */; };
 		E808AE2D2052C2020040D14A /* UIView+Guard.m in Sources */ = {isa = PBXBuildFile; fileRef = E808AE2C2052C2020040D14A /* UIView+Guard.m */; };
+		E83E1ADE205E711B00DF17B7 /* WildPointerTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E83E1ADC205E711B00DF17B7 /* WildPointerTestViewController.m */; };
 		E886AF2F205CB46F007D5BF7 /* SIRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = E886AF2E205CB46F007D5BF7 /* SIRecord.m */; };
 		E886AF36205CB56F007D5BF7 /* SICrashGuardManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E886AF35205CB56F007D5BF7 /* SICrashGuardManager.m */; };
 		E886AF3A205CC4C2007D5BF7 /* SICallStackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E886AF39205CC4C2007D5BF7 /* SICallStackManager.m */; };
@@ -54,6 +55,8 @@
 		E808AE272052B96E0040D14A /* SISwizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SISwizzling.h; sourceTree = "<group>"; };
 		E808AE282052B96E0040D14A /* SISwizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SISwizzling.m; sourceTree = "<group>"; };
 		E808AE2C2052C2020040D14A /* UIView+Guard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Guard.m"; sourceTree = "<group>"; };
+		E83E1ADC205E711B00DF17B7 /* WildPointerTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WildPointerTestViewController.m; sourceTree = "<group>"; };
+		E83E1ADD205E711B00DF17B7 /* WildPointerTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WildPointerTestViewController.h; sourceTree = "<group>"; };
 		E886AF2D205CB46F007D5BF7 /* SIRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIRecord.h; sourceTree = "<group>"; };
 		E886AF2E205CB46F007D5BF7 /* SIRecord.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIRecord.m; sourceTree = "<group>"; };
 		E886AF34205CB56F007D5BF7 /* SICrashGuardManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SICrashGuardManager.h; sourceTree = "<group>"; };
@@ -127,6 +130,7 @@
 		E808AE0B2052B5F50040D14A /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				E83E1ADB205E711B00DF17B7 /* WildPointerTest */,
 				E886AF8E205CFF7C007D5BF7 /* ContainersTest */,
 				E886AF88205CFC22007D5BF7 /* NSNullTest */,
 				E886AF81205CEB98007D5BF7 /* Unrecoginzed */,
@@ -199,6 +203,15 @@
 				E808AE2C2052C2020040D14A /* UIView+Guard.m */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		E83E1ADB205E711B00DF17B7 /* WildPointerTest */ = {
+			isa = PBXGroup;
+			children = (
+				E83E1ADC205E711B00DF17B7 /* WildPointerTestViewController.m */,
+				E83E1ADD205E711B00DF17B7 /* WildPointerTestViewController.h */,
+			);
+			path = WildPointerTest;
 			sourceTree = "<group>";
 		};
 		E886AF2C205CB441007D5BF7 /* Record */ = {
@@ -442,6 +455,7 @@
 				E886AF6D205CEB79007D5BF7 /* NSTimerViewController.m in Sources */,
 				E808AE2D2052C2020040D14A /* UIView+Guard.m in Sources */,
 				E886AF7C205CEB8C007D5BF7 /* UITestViewController.m in Sources */,
+				E83E1ADE205E711B00DF17B7 /* WildPointerTestViewController.m in Sources */,
 				E886AF71205CEB81007D5BF7 /* KVOTestViewController.m in Sources */,
 				E8CB33CF2054171800A9F165 /* NSNotificationCenter+Remover.m in Sources */,
 				E886AF69205CE9E7007D5BF7 /* SIGuardSetup.m in Sources */,
@@ -600,6 +614,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.silence.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -613,6 +628,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.silence.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

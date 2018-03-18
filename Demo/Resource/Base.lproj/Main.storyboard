@@ -160,6 +160,26 @@
                                             <segue destination="XLk-5c-8L4" kind="show" id="jXJ-ao-J3S"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="hXc-vy-x59" style="IBUITableViewCellStyleDefault" id="qdE-37-L2b">
+                                        <rect key="frame" x="0.0" y="308" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qdE-37-L2b" id="hhO-9M-U0J">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="WildPointer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hXc-vy-x59">
+                                                    <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="FNi-nk-21l" kind="show" id="yIf-Aj-FaS"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -173,6 +193,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kE2-jj-Cvr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-622" y="-40"/>
+        </scene>
+        <!--WildPointerTest-->
+        <scene sceneID="LQl-Kb-PAF">
+            <objects>
+                <viewController id="FNi-nk-21l" customClass="WildPointerTestViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Tm-ag-T1J"/>
+                        <viewControllerLayoutGuide type="bottom" id="HT7-dM-oLZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="saw-oq-r00">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5X-gd-eVo">
+                                <rect key="frame" x="148" y="318" width="79" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="WildPointer"/>
+                                <connections>
+                                    <action selector="DainglingPointTest:" destination="FNi-nk-21l" eventType="touchUpInside" id="2gc-6Y-yaB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="WildPointerTest" id="Ruf-x9-yRS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6SD-uJ-oTj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="459" y="-231"/>
         </scene>
         <!--Containers-->
         <scene sceneID="LIO-sH-3Uw">
