@@ -660,6 +660,8 @@ SIStaticHookClass(NSNull, GuardNull, id, @selector(forwardingTargetForSelector:)
 同 KVO 一样，既然 timer 和 target 直接交互容易出现问题，我们就再找个代理将 target 和 selctor 等信息保存到 Proxy 里，并且是弱引用 target。  
 这样避免因为循环引用造成的内存泄漏。然后在触发真正 target 事件的时候如果 target 置为 nil 了这时候手动去关闭定时器。
 
+![proxytimer](img/proxytimer.png)
+
 给Timer添加一个引用的Proxy,并Hook 相关方法绑定:
 
 ```Objc
