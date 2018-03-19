@@ -303,7 +303,7 @@ __问题1 ： 不成对的添加观察者和移除观察者会导致 Crash__
 
 ```
 
-我们需要 Hook NSObject的 KVO 相关方法。
+我们需要 Hook NSObject的`KVO`相关方法。
 
 ```Objc
 - (void)addObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(void *)context;
@@ -571,14 +571,14 @@ void addCenterForObserver(NSNotificationCenter *center,id obs) {
 
 虽然 Objecttive-C 不允许开发者将 nil 放进容器内，但是另外一个代表用户态 `空` 的类 NSNull 却可以放进容器，但令人不爽的是这个类的实例，并不能响应任何方法。 
 
-容器中出现 NSNull 一般是 API 接口返回了含有 null 的 JSON 数据，
+容器中出现 NSNull 一般是 API 接口返回了含有 null 的`JSON`数据，
 调用方通常将其理解为 NSNumber，NSString，NSDictionary 和 NSArray。 这时开发者如果没有做好防御 一旦对 NSNull 这个类型调用任何方法都会出现 unrecongized selector 错误。 
 
 
 
 ## 解决办法
 
-我们在 NSNull 的转发方法中可以判断上面的四种类型是否可以解析。如果可以解析直接将其转发给这几种对象，如果不能则调用父类的默认实现。
+我们在 NSNull 的转发方法中可以判断上面的四种类型是否可以解析。如果可以解析直接将其转发给这几种对象，如果不能则调用父类的默认实现。
 
 
 ```Objc
@@ -746,7 +746,7 @@ SIStaticHookEnd
 
 ## 出现原因
 
-一般在单线程条件下使用 ARC 正确的处理引用关系野指针出现的并不频繁， 但是多线程下却出现概率比较大，通常在一个线程中释放了对象，另外一个线程还没有更新指针状态后续访问就可能会造成随机性bug。
+一般在单线程条件下使用 ARC 正确的处理引用关系野指针出现的并不频繁， 但是多线程下却出现概率比较大，通常在一个线程中释放了对象,另外一个线程还没有更新指针状态后续访问就可能会造成随机性bug。
 
 被回收的内存不一定立马被使用,而且崩溃的位置可能也与原来的逻辑相聚很远，因此收集的堆栈信息也可能是杂乱无章没有什么价值。XCode本身为了便于开放调试时发现野指针问题，提供了Zombie机制，能够在发生野指针时提示出现野指针的类，从而解决了开发阶段出现野指针的问题。然而针对于线上产生的野指针问题，依旧没有一个比较好的办法来定位问题。
 
@@ -764,7 +764,7 @@ SIStaticHookEnd
 
 1. 建立白名单机制，由于系统的类基本不会出现野指针，而且 hook 所有的类开销较大。所以我们只过滤开发者自定义的类。
 2. hook dealloc 方法 这些需要保护的类我们并不让其释放，而是调用objc_desctructInstance 方法释放实例内部所持有属性的引用和关联对象。
-3. 利用 object_setClass(id，Class) 修改 isa 指针将其指向一个Proxy 对象(类比系统的 KVO 实现)，此 Proxy 实现了一个和前面所说的智能转发类一样的 `return 0`的函数。
+3. 利用 object_setClass(id，Class) 修改 isa 指针将其指向一个Proxy 对象(类比系统的 KVO 实现)，此 Proxy 实现了一个和前面所说的智能转发类一样的 `return 0`的函数。
 4. 在 Proxy 对象内的 `- (void)forwardInvocation:(NSInvocation *)anInvocation` 中收集 Crash 信息。
 5. 缓存的对象是有成本的，我们在缓存对象到达一定数量时候将其释放(object_dispose)。
 
