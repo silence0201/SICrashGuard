@@ -303,6 +303,24 @@ __问题1 ： 不成对的添加观察者和移除观察者会导致 Crash__
 
 ```
 
+需要转发给Proxy处理KVO的方法:
+
+```Objc
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    // 转发KVO监听
+    NSHashTable<NSObject *> *os = self.kvoInfoMap[keyPath];
+    for (NSObject *observer in os) {
+        @try {
+            [observer observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+        } @catch (NSException *exception) {
+            NSString *reason = [NSString stringWithFormat:@"%@:KVO异常",exception.name];
+            [SIRecord recordFatalWithReason:reason errorType:SIGuardTypeKVO];
+        }
+    }
+}
+```
+
+
 我们需要 Hook NSObject的`KVO`相关方法。
 
 ```Objc
